@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "730737173539",
+    "project_id": "paw-chat-ca340",
+    "storage_bucket": "paw-chat-ca340.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:730737173539:android:6ed1893cda57812970bd96",
+        "android_client_info": {
+          "package_name": "com.neoh.paw_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "730737173539-720bfmrqje6r6m6i5lq12j8i9lm8ur1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFtvf2EuU2n7g9QchYHuZIE0LnwMIqA7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "730737173539-720bfmrqje6r6m6i5lq12j8i9lm8ur1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "730737173539-7tm4t6bpno5j6e37ek0hjkfosu5n5qvq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterChatApp.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
