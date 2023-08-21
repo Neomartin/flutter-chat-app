@@ -1,12 +1,37 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_app/constants/text_constants.dart';
 import 'package:flutter_chat_app/pages/chat_screen.dart';
 import 'package:flutter_chat_app/pages/login_screen.dart';
 import 'package:flutter_chat_app/pages/register_screen.dart';
 import 'package:flutter_chat_app/pages/welcome_screen.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
-void main() {
+import 'firebase_options.dart';
+
+void main() async {
   runApp(const MyApp());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  configLoading();
+}
+
+void configLoading() {
+  EasyLoading.instance
+    ..displayDuration = const Duration(milliseconds: 2000)
+    ..indicatorType = EasyLoadingIndicatorType.ring
+    ..loadingStyle = EasyLoadingStyle.custom
+    ..indicatorSize = 45.0
+    ..radius = 10.0
+    ..progressColor = Colors.lightBlue
+    ..backgroundColor = Colors.transparent
+    ..indicatorColor = Colors.yellow
+    ..textColor = Colors.lightBlue
+    ..maskColor = Colors.blue.withOpacity(0.5)
+    ..userInteractions = true
+    ..dismissOnTap = false;
 }
 
 class MyApp extends StatelessWidget {
@@ -25,6 +50,7 @@ class MyApp extends StatelessWidget {
             // bodyColor: Colors.white,
             ),
       ),
+      builder: EasyLoading.init(),
       initialRoute: WelcomeScreen.id,
       routes: {
         LoginScreen.id: (context) => const LoginScreen(),

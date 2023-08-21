@@ -4,6 +4,7 @@ import 'package:flutter_chat_app/components/welcome_buttons.dart';
 import 'package:flutter_chat_app/constants/button_constants.dart';
 import 'package:flutter_chat_app/constants/text_constants.dart';
 import 'package:flutter_chat_app/pages/login_screen.dart';
+import 'package:flutter_chat_app/pages/register_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   static const String id = 'welcome_screen';
@@ -54,7 +55,7 @@ class WelcomeScreen extends StatelessWidget {
               }, 'Ingresar', const Icon(Icons.login)),
               WelcomeScreenButton(
                 () {
-                  Navigator.pushNamed(context, LoginScreen.id);
+                  Navigator.pushNamed(context, RegisterScreen.id);
                 },
                 'Registrarse',
                 const Icon(Icons.app_registration),

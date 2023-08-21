@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDFtvf2EuU2n7g9QchYHuZIE0LnwMIqA7Q',
-    appId: '1:730737173539:android:cef27545fa76a7c170bd96',
+    appId: '1:730737173539:android:6ed1893cda57812970bd96',
     messagingSenderId: '730737173539',
     projectId: 'paw-chat-ca340',
     storageBucket: 'paw-chat-ca340.appspot.com',
