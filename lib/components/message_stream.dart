@@ -4,12 +4,16 @@ import 'package:flutter_chat_app/components/chat_bubble.dart';
 
 class MessageStream extends StatelessWidget {
   final FirebaseFirestore firestore;
-  const MessageStream(this.firestore, {super.key});
+  final String? userEmail;
+  const MessageStream(this.firestore, this.userEmail, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: firestore.collection('messages').snapshots(),
+      stream: firestore
+          .collection('messages')
+          .orderBy('date', descending: true)
+          .snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return const Center(
@@ -24,11 +28,14 @@ class MessageStream extends StatelessWidget {
           final messageText = message['text'];
           final messageSender = message['sender'];
           final messageWidget = MessageBubbles(
-              messageText: messageText, messageSender: messageSender);
+              messageText: messageText,
+              messageSender: messageSender,
+              currentUserEmail: userEmail == messageSender);
           messageWidgets.add(messageWidget);
         }
         return Expanded(
           child: ListView(
+            reverse: true,
             children: messageWidgets,
           ),
         );

@@ -104,9 +104,8 @@ class _RegisterScreenState extends State<RegisterScreen>
                       BuildContext ctx = context;
                       if (email != null && password != null) {
                         try {
-                          final response =
-                              await _auth.createUserWithEmailAndPassword(
-                                  email: email!, password: password!);
+                          await _auth.createUserWithEmailAndPassword(
+                              email: email!, password: password!);
                           if (mounted) {
                             Navigator.pushNamed(ctx, ChatScreen.id);
                           }

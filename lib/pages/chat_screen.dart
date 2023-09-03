@@ -58,7 +58,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      MessageStream(firestore),
+                      MessageStream(firestore, user!.email),
                     ],
                   ),
                 )),
@@ -87,7 +87,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     firestore.collection('messages').add({
                       'text': message,
                       'sender': user!.email,
-                      'date': DateTime.now()
+                      'date': FieldValue.serverTimestamp(),
                     });
                     messageController.clear();
                   },

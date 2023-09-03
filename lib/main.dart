@@ -1,6 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_app/constants/text_constants.dart';
 import 'package:flutter_chat_app/pages/chat_screen.dart';
 import 'package:flutter_chat_app/pages/login_screen.dart';
 import 'package:flutter_chat_app/pages/register_screen.dart';
@@ -58,30 +57,6 @@ class MyApp extends StatelessWidget {
         WelcomeScreen.id: (context) => const WelcomeScreen(),
         RegisterScreen.id: (context) => const RegisterScreen(),
       },
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(widget.title)),
-      body: const Center(
-        child: Text(
-          'Hello, world!',
-          style: kLoginTitleScreen,
-        ),
-      ),
     );
   }
 }

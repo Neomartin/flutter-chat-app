@@ -5,22 +5,27 @@ class MessageBubbles extends StatelessWidget {
     super.key,
     required this.messageText,
     required this.messageSender,
+    required this.currentUserEmail,
   });
 
   final String messageText;
   final String messageSender;
+  final bool currentUserEmail;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
+        crossAxisAlignment: currentUserEmail
+            ? CrossAxisAlignment.end
+            : CrossAxisAlignment.start,
         children: [
           Text(messageSender,
               style: const TextStyle(color: Colors.white54, fontSize: 12.0)),
           Material(
             elevation: 5.0,
-            color: Colors.blueAccent,
+            color: currentUserEmail ? Colors.blueAccent : Colors.white38,
             borderRadius: const BorderRadius.all(Radius.circular(10)),
             child: Padding(
               padding:
